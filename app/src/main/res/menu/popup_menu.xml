@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <menu>
+        <item
+            android:id="@+id/text_color"
+            android:title="颜色">
+            <menu>
+                <item
+                    android:id="@+id/color1"
+                    android:title="红色" />
+                <item
+                    android:id="@+id/color2"
+                    android:title="蓝色" />
+                <item
+                    android:id="@+id/color3"
+                    android:title="绿色" />
+            </menu>
+        </item>
+        <item
+            android:id="@+id/text_style"
+            android:title="保存" />
+        <menu>
+            <item
+                android:id="@+id/text_1"
+                android:title="加粗" />
+            <item
+                android:id="@+id/text_2"
+                android:title="倾斜" />
+        </menu>
+
+    </menu>
+</menu>
