@@ -188,7 +188,7 @@ public class MainActivity1 extends AppCompatActivity {
      * 获取音频数据轨道
      *
      * @param extractor
-     * @return
+     * @return  如果不是audio根式返回-1
      */
     //TargetApi 标识该方法只能在api为JELLY_BEAN （16）的手机上才能使用
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -207,17 +207,19 @@ public class MainActivity1 extends AppCompatActivity {
         return -1;
     }
 
-    @Override
     /**
-     *权限请求监听回调
-     *
+     * 获取申请权限的结果
+     * @param requestCode  获取权限请求码
+     * @param permissions  申请的权限列表 为上面申请的 读写权限
+     * @param grantResults  已经授权的列表
      */
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         //根据请求码进行判断  上面获取的时候输入的为0 此处用0判断
         if (requestCode == 0) {
-            //循环 已经同意授权的列表
+            //循环 已经同意授权的列表 查看是否全部权限都已授权
             for (int i : grantResults) {
-                //权限检查结果
+                //权限检查结果 如果没有授权就提示需要允许权限才能使用
                 if (i != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "需要允许权限才能使用", Toast.LENGTH_LONG).show();
                     //结束当前页面
